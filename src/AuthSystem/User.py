@@ -9,7 +9,11 @@ import random
 import string
 import time
 from email.mime.text import MIMEText
-from AuthConfig import *
+from .AuthConfig import *
+try:
+    from string import letters as letters
+except ImportError:
+    from string import ascii_letters as letters
 
 def create_cookie(length=12, chars=string.letters + string.digits): 
     return ''.join([random.choice(chars) for x in range(length)])
