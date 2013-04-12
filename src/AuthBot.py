@@ -29,7 +29,10 @@ class AuthBot(LoggerBot.LoggerBot):
 
             print("SECRET:"),
             stdout.flush()
-            secret = raw_input('')
+            try:
+                secret = raw_input('')
+            except NameError
+                secret = input('')
             self.authsys = AuthSys(secret)
             self.nick_user_relation = {}
             self.user_nick_relation = {}
